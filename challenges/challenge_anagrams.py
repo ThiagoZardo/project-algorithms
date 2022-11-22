@@ -2,11 +2,11 @@ def merge_sort(string, start=0, end=None):
     if end is None:
         end = len(string)
 
-    if (end - start) > 1: # se não reduzi o suficiente, continua
-        mid = (start + end) // 2 # encontrando o meio
-        merge_sort(string, start, mid) # dividindo as listas
+    if (end - start) > 1:
+        mid = (start + end) // 2
+        merge_sort(string, start, mid)
         merge_sort(string, mid, end)
-        merge(string, start, mid, end) # unindo as listas
+        merge(string, start, mid, end)
 
 
 def merge(string, start, mid, end):
@@ -42,4 +42,7 @@ def is_anagram(first_string, second_string):
     if (first_string_sorted == '' or secound_string_sorted == ''):
         return (first_string_sorted, secound_string_sorted, False)
 
-    return (first_string_sorted, secound_string_sorted, first_string_sorted == secound_string_sorted)
+    return (
+        first_string_sorted,
+        secound_string_sorted,
+        first_string_sorted == secound_string_sorted)
